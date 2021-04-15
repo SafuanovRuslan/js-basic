@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        let sum = (a, b) => a + b;
+        let dif = (a, b) => a - b;
+        let mul = (a, b) => a * b;
+        let div = (a, b) => a / b;
+
+        function mathOperation(a, b, operation) {
+            switch (operation) {
+                case '+':
+                    return sum(a, b);
+                case '-':
+                    return dif(a, b);
+                case '*':
+                    return mul(a, b);
+                case '/':
+                    return div(a, b);
+            }
+        }
+
+        let result1 = mathOperation(12, 4, '+');
+        let result2 = mathOperation(12, 4, '-');
+        let result3 = mathOperation(12, 4, '*');
+        let result4 = mathOperation(12, 4, '/');
+
+        console.log(result1);
+        console.log(result2);
+        console.log(result3);
+        console.log(result4);
+    </script>
+</body>
+</html>
