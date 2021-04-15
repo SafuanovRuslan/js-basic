@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function doSomething() {
+            let a = +prompt('Введите первое число', '');
+            let b = +prompt('Введите первое число', '');
+
+            if ( isNaN(a) || isNaN(b) ) return;
+
+            // Оба отрицательные: 0
+            // Одно положительное: 1
+            // Оба положительные: 2
+            let key = Boolean(a >= 0) + Boolean(b >= 0);
+
+            switch (key) {
+                case 0: 
+                    alert(a * b);
+                    break;
+                case 1:
+                    alert(a + b);
+                    break;
+                case 2: 
+                    alert(a - b);
+                    break;
+            }
+        }
+
+        doSomething();
+    </script>
+</body>
+
+</html>

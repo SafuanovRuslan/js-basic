@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        // пример 1
+        // Инкремент в префиксной форме: ++а == 2
+        // Присваивание: с = 2
+        let a = 1,
+            b = 1,
+            c, d;
+        c = ++a;
+        alert(c); //ответ: 2
+
+        // пример 2
+        // Присваивание: d = 1
+        // Инкремент в постфиксной форме: b++ == 2
+        // Присваивание: d = 1
+        d = b++;
+        alert(d); //ответ: 1
+
+        // пример 3
+        // Инкремент в префиксной форме: ++а == 3   ** 1 **
+        // Сложение: 2 + 3 == 5
+        // присваивание: с = 5
+        c = 2 + ++a;
+        alert(c); //ответ: 5
+
+        // пример 4
+        // Сложение: 2 + 2 == 4
+        // присваивание: d = 4
+        // Инкремент в постфиксной форме: b++ == 3   ** 2 **
+        d = 2 + b++;
+        alert(d); //ответ: 4
+
+        alert(a); // ** 1 **
+        alert(b); // ** 2 **
+    </script>
+</body>
+
+</html>
