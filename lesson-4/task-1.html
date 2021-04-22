@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-1</title>
+</head>
+<body>
+    <script>
+        function numberToObject(number) {
+            if (typeof(number) !== 'number' || isNaN(number)) {
+                console.log( new Error('not a number') );
+                return {};
+            }
+
+            if (parseInt(number) !== number) {
+                console.log( new Error('number is not integer') );
+                return {};
+            }
+
+            if (number < 0 || number > 999) {
+                console.log( new Error('wrong range') );
+                return {};
+            }
+
+            number = String(number)
+
+            let object = {};
+
+            /* +number[number.length - 3] || 0;
+               вернет первое истинное значение
+               или последнее, если все значения false
+            */
+
+            object.units = +number[number.length - 1] || 0;
+            object.tens = +number[number.length - 2] || 0;
+            object.hundreds = +number[number.length - 3] || 0;
+
+            return object;
+        }
+
+        console.log( numberToObject(615) );
+        console.log( numberToObject(15) );
+        console.log( numberToObject(615.1) );
+        console.log( numberToObject('615') );
+        console.log( numberToObject('') );
+        console.log( numberToObject(-4) );
+        console.log( numberToObject(6666) );
+        console.log( numberToObject(true) );
+        console.log( numberToObject(NaN) );
+        console.log( numberToObject({}) );
+        console.log( numberToObject(null) );
+        console.log( numberToObject(undefined) );
+
+        /*  почему число интерпретируется как восьмиричное? 
+            Это же не 0o15
+            И почему именно к 0o, а не к 0x или 0b?
+        */
+        console.log( numberToObject(015) );
+    </script>
+</body>
+</html>
